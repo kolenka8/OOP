@@ -41,7 +41,7 @@ class Triangle:
         Returns:
             bool: результат проверки
         """
-        sides = sorted([self.side_a, self.side_b, self.side_c], reverse=True)
+        sides = sorted([self.side_a, self.side_b, self.side_c])
         for side in sides:
             if not isinstance(side, float):
                 return False
