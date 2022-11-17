@@ -28,14 +28,14 @@ class Triangle:
             float: Площадь треугольника
         """
         p = (self.side_a + self.side_b + self.side_c) / 2
-        return round((p*(p - self.side_a)*(p - self.side_b)*(self.side_c))**0.5)
+        return round((p*(p - self.side_a)*(p - self.side_b)*(self.side_c))**0.5, 2)
 
     def find_perimetr(self) -> float:
         """Считает периметр треугольника.
         Returns:
             float: Периметр треугольника
         """
-        return self.side_a + self.side_b + self.side_c
+        return round(self.side_a + self.side_b + self.side_c, 2)
     def is_valid(self) -> bool:
         """Проверка, существует ли такой треугольник.
         Returns:
@@ -50,3 +50,7 @@ class Triangle:
         if sides[0] > sides[1] + sides[2]:
             return False
         return True
+
+
+tr = Triangle(.2, .2, .2)
+print(tr.find_perimetr())

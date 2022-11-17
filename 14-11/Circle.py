@@ -25,21 +25,19 @@ class Circle:
         Returns:
             float: Длина окружности
         """
-        return 2 * math.pi * self.radius
+        return round(2 * math.pi * self.radius, 2)
     
     def square(self) -> float:
         """Считает площадь круга.
         Returns:
             float: Площадь круга
         """
-        return math.pi * self.radius ** 2
+        return round(math.pi * self.radius ** 2, 2)
     def is_valid(self) -> bool:
         """Проверка, существует ли такой круг.
         Returns:
             bool: результат проверки
         """
-        if not isinstance(self.radius, (float)):
-            return False
-        elif self.radius <= 0:
-            return False
-        return True
+        if isinstance(self.radius, (float)):
+            return self.radius > 0
+    
