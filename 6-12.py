@@ -1,7 +1,6 @@
 from multiprocessing import Process, Queue, Lock, Event
 from time import sleep
 from random import randint, choice
-from faker import Faker
 
 class Client:
     def __init__(self, name, serv):
@@ -85,7 +84,6 @@ SERVICES = [
 
 if __name__ == '__main__':
     lock = Lock()
-    faker = Faker()
     names = [str(i) for i in range(6)]
     clients = [Client(name, choice(SERVICES)) for name in names]
     barber_shop = BarberShop(SERVICES, SIZE_QUEUE, lock)
