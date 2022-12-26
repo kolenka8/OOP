@@ -13,14 +13,14 @@ class Philosopher(Process):
         self.right_lock = right_lock
 
     def eating(self):
-        print('Философ {0} кушает'.format(self.name))
+        print('Философ {} кушает'.format(self.name))
         sleep(randint(*Philosopher.EAT_INTERVAL))
-        print('Философ {0} закончил кушать и начинает думать.'.format(self.name))
+        print('Философ {} закончил кушать и начинает думать.'.format(self.name))
         self.right_lock.release()
         self.left_lock.release()
-        print('Философ {0} думает'.format(self.name))
+        print('Философ {} думает'.format(self.name))
         sleep(randint(*Philosopher.THINK_INTERVAL))
-        print('Философ {0} закончил думать и хочет кушать.'.format(self.name))
+        print('Философ {} закончил думать и хочет кушать.'.format(self.name))
 
     def run(self):
         while True:
